@@ -32,7 +32,7 @@
                             <td>{{item.product}}</td>
                             <td>{{item.feature}}</td>
                             <td>{{
-                                ((item.quantity/12) * (item.product === "miga" && item.feature === "vegetable" ? 13000 : item.product === "miga" ? 11000 : 10000)).toLocaleString("es-AR", {
+                                ((item.quantity/12) * (item.product === "miga" && item.feature === "verduras" ? 13000 : item.product === "miga" ? 11000 : 10000)).toLocaleString("es-AR", {
                                     style: "currency",
                                     currency: "ARS"
                                 })

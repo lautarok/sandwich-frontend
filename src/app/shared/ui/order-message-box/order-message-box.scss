@@ -11,7 +11,6 @@ label {
     grid-template-rows: 1fr auto;
     border-style: solid;
     border-color: variables.$color-card-border;
-    border-radius: variables.$xl-radius;
     background-color: variables.$color-card;
     @include mixins.color-scheme(dark) {
         background-color: variables.$dark-color-card;
@@ -24,16 +23,16 @@ textarea {
     width: 100%;
     min-height: 5em;
     field-sizing: content;
-    padding: variables.$xl-padding;
+    padding: variables.$md-padding;
 }
 
 nav {
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: flex-end;
-    padding-right: .5em;
-    padding-bottom: .5em;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: variables.$md-padding;
 }
 
 nav > div {
@@ -44,7 +43,6 @@ nav > div {
     align-items: center;
     background-color: variables.$color-foreground;
     color: variables.$color-background;
-    border-radius: 100em;
     @include mixins.color-scheme(dark) {
         background-color: variables.$dark-color-foreground;
         color: variables.$dark-color-background;

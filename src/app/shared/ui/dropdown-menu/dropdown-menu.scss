@@ -1,0 +1,23 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+div > button {
+    width: fit-content;
+    height: fit-content;
+    padding: .3rem .6rem;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: .8em;
+    background-color: variables.$color-card;
+    border: solid 1px variables.$color-card-border;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-background;
+        border-color: variables.$dark-color-card-border;
+    }
+}
+
+div > button > svg {
+    width: .85em;
+    height: .85em;
+}

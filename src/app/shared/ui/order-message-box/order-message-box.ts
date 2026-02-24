@@ -1,8 +1,9 @@
 import { Component, input, output } from '@angular/core';
+import { DropdownMenu } from "../dropdown-menu/dropdown-menu";
 
 @Component({
   selector: 'app-order-message-box',
-  imports: [],
+  imports: [DropdownMenu],
   templateUrl: './order-message-box.html',
   styleUrl: './order-message-box.scss',
 })

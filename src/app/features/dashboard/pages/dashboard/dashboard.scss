@@ -4,5 +4,65 @@
 main {
     width: 100%;
     min-height: calc(100% - 6rem);
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding-bottom: 3rem;
+}
+
+section > .head {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section > .head > h2 {
+    font-size: .9em;
+}
+
+section.welcome {
+    width: 100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border: solid 1px;
+    border-left: none;
+    border-right: none;
+    border-color: variables.$color-card-border;
+    background-color: variables.$color-card;
     @include mixins.container-x-padding;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-card;
+        border-color: variables.$dark-color-card-border;
+    }
+}
+
+section.welcome > h1 > span {
+    color: variables.$color-text-primary;
+    @include mixins.color-scheme(dark) {
+        color: variables.$dark-color-text-primary;
+    }
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5em;
+    @include mixins.container-x-padding;
+}
+
+section.statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+section.statistics > .layout {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
 }

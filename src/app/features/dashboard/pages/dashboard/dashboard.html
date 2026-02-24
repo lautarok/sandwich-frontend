@@ -2,4 +2,24 @@
     <section class="welcome">
         <h1>Bienvenido, <span>Lautaro</span>.</h1>
     </section>
+    <div class="grid-layout">
+        <section class="statistics">
+            <div class="head">
+                <h2>Estadísticas</h2>
+                <app-dropdown-menu label="Este mes" />
+            </div>
+            <div class="layout">
+                <app-statistic-card />
+                <app-statistic-card />
+                <app-statistic-card />
+                <app-statistic-card />
+            </div>
+        </section>
+        <section class="order-list">
+            <div class="head">
+                <h2>Listado de órdenes</h2>
+                <app-dropdown-menu label="Todas" />
+            </div>
+        </section>
+    </div>
 </main>

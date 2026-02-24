@@ -1,0 +1,20 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+footer {
+    width: 100%;
+    height: fit-content;
+    background-color: variables.$color-card;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-top: solid 1px;
+    border-color: variables.$color-card-border;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-card;
+        border-color: variables.$dark-color-card-border;
+    }
+}

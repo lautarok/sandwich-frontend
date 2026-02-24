@@ -85,7 +85,6 @@ main {
 
 .ticket > .ticket-head > .text > span:last-child > span {
     padding: .2em;
-    border-radius: .3em;
     margin-left: .2em;
     font-weight: 600;
     background-color: variables.$color-primary;
@@ -147,7 +146,6 @@ main {
 }
 
 .ticket > .total > span > span {
-    border-radius: .3em;
     padding: variables.$sm-padding;
     background-color: variables.$color-primary;
     color: variables.$color-primary-foreground;
