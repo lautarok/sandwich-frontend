@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { catchError, Observable, throwError } from 'rxjs'
+import { environment } from '../../../../environments/environment'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiCall {
-  baseUrl = "http://localhost:3000/api/v1/"
-
   constructor(
     private httpClient: HttpClient
   ) {}
@@ -19,7 +18,7 @@ export class ApiCall {
 
   get<T>(path: string): Observable<T> {
     return this.httpClient
-      .get<T>(this.baseUrl + path)
+      .get<T>(environment.API_URL + path)
       .pipe(catchError(this.handleError))
   }
 }
