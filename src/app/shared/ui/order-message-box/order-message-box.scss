@@ -1,17 +1,15 @@
 @use "../../../../variables.scss";
 @use "../../../../mixins.scss";
 
-textarea {
-    resize: none;
+label {
     width: 30em;
     overflow: hidden;
     height: fit-content;
-    min-height: 10em;
-    max-height: 30em;
     border-width: 1px;
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
     border-style: solid;
-    padding: variables.$xl-padding;
     border-color: variables.$color-card-border;
     border-radius: variables.$xl-radius;
     background-color: variables.$color-card;
@@ -19,4 +17,41 @@ textarea {
         background-color: variables.$dark-color-card;
         border-color: variables.$dark-color-card-border;
     }
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    min-height: 5em;
+    field-sizing: content;
+    padding: variables.$xl-padding;
+}
+
+nav {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: .5em;
+    padding-bottom: .5em;
+}
+
+nav > div {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: variables.$color-foreground;
+    color: variables.$color-background;
+    border-radius: 100em;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-foreground;
+        color: variables.$dark-color-background;
+    }
+}
+
+nav > div > svg {
+    width: 1em;
+    height: 1em;
 }

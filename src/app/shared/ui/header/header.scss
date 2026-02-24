@@ -1,0 +1,50 @@
+@use "../../../../mixins.scss";
+@use "../../../../variables.scss";
+
+header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mixins.container-x-padding;
+}
+
+header > a {
+    font-size: 1.2em;
+    font-weight: 600;
+    background: -webkit-linear-gradient(
+        45deg,
+        variables.$color-text-primary,
+        variables.$color-foreground
+    );
+    @include mixins.color-scheme(dark) {
+        background: -webkit-linear-gradient(
+            45deg,
+            variables.$dark-color-text-primary,
+            variables.$dark-color-foreground
+        );
+    }
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header > nav > ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+header > nav > ul > li {
+    list-style: none;
+}
+
+header > nav > ul > li > a {
+    font-size: .9em;
+    font-weight: 600;
+    opacity: .75;
+    transition: opacity ease-in-out .25s;
+    &:hover, &.active {
+        opacity: 1;
+    }
+}

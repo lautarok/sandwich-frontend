@@ -3,7 +3,8 @@
 
 main {
     width: fit-content;
-    height: 100%;
+    height: calc(100dvh - 6rem);
+    padding-bottom: 6rem;
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: center;
@@ -20,12 +21,15 @@ main {
     gap: 1em;
     pointer-events: none;
     opacity: 0;
-    transition: max-width ease-in-out .5s,
-        opacity ease-in-out .5s;
+    transition: max-width ease-in-out .3s,
+        opacity ease-in-out .3s;
     &.show {
         pointer-events: all;
         max-width: 30em;
         opacity: 1;
+    }
+    &.show + .input-container > h1 {
+        opacity: 0;
     }
 }
 
@@ -40,14 +44,15 @@ main {
     width: fit-content;
     padding: variables.$xl-padding;
     background-color: variables.$color-card;
-    border: solid 1px variables.$color-card-border;
+    color: variables.$color-foreground;
     display: flex;
     flex-direction: column;
     gap: 2em;
-    border-radius: variables.$xl-radius;
     margin-right: 2.5rem;
+    border: solid 1px variables.$color-card-border;
     @include mixins.color-scheme(dark) {
         background-color: variables.$dark-color-card;
+        color: variables.$dark-color-foreground;
         border-color: variables.$dark-color-card-border;
     }
 }
@@ -116,8 +121,7 @@ main {
         text-align: right;
     }
     & tbody > tr {
-        & > td:first-child,
-        & > td:nth-child(2) {
+        & > td:not(:last-child) {
             border-right: solid 1px;
             border-color: variables.$color-card-border;
             @include mixins.color-scheme(dark) {
@@ -138,6 +142,7 @@ main {
     font-size: 1.3em;
     font-weight: 600;
     font-family: monospace;
+    margin-top: .5em;
 }
 
 .ticket > .total > span > span {
@@ -159,4 +164,9 @@ main {
     gap: 1em;
     justify-content: center;
     align-items: center;
+}
+
+.input-container > h1 {
+    opacity: 1;
+    transition: opacity ease-in-out .3s;
 }

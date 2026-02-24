@@ -1,5 +1,12 @@
-<textarea
-    autofocus
-    (input)="messageChange.emit($any($event.target).value)"
-    placeholder="Indica tu pedido aquí..."
->{{message()}}</textarea>
+<label>
+    <textarea
+        autofocus
+        (input)="messageChange.emit($any($event.target).value)"
+        placeholder="Indica tu pedido aquí..."
+    >{{message()}}</textarea>
+    <nav>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ArrowRight"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>
+        </div>
+    </nav>
+</label>

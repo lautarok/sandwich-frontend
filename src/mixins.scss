@@ -5,3 +5,23 @@
         @content;
     }
 }
+
+@mixin container-x-padding {
+    padding-left: calc(50% - 50em);
+    padding-right: calc(50% - 50em);
+
+    @media screen and (max-width: 110em) {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+    
+    @media screen and (max-width: 70em) {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    
+    @media screen and (max-width: 40em) {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

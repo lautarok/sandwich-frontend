@@ -18,7 +18,7 @@ export class SimulateOrder {
   get total() {
     return this.result?.()?.semanticResult.items.reduce((acc, curr) => {
       acc += (curr.quantity / 12) * (
-        curr.product === "miga" && curr.feature === "verdura" ? 13000
+        curr.product === "miga" && curr.feature === "verduras" ? 13000
           : curr.product === "miga" ? 11000
           : 10000
       )
