@@ -1,0 +1,11 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+button {
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem .8rem;
+    background-color: variables.$color-primary;
+    color: variables.$color-primary-foreground;
+    font-weight: 600;
+}

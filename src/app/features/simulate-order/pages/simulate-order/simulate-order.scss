@@ -21,11 +21,12 @@ main {
     gap: 1em;
     pointer-events: none;
     opacity: 0;
+    font-size: .8rem;
     transition: max-width ease-in-out .3s,
         opacity ease-in-out .3s;
     &.show {
         pointer-events: all;
-        max-width: 30em;
+        max-width: 100rem;
         opacity: 1;
     }
     &.show + .input-container > h1 {

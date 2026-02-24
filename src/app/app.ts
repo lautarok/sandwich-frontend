@@ -10,5 +10,7 @@ import { Footer } from "./shared/ui/footer/footer";
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('frontend');
+  handleRouterActivate() {
+    window.scrollTo({top: 0})
+  }
 }

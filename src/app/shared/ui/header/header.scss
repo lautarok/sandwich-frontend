@@ -7,6 +7,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2em);
+    background-color: rgba(variables.$color-background, .5);
+    @include mixins.color-scheme(dark) {
+        background-color: rgba(variables.$dark-color-background, .5);
+    }
     @include mixins.container-x-padding;
 }
 

@@ -10,7 +10,7 @@ div {
     line-height: 1;
     background-color: variables.$color-card;
     border: solid 1px variables.$color-card-border;
-    padding: 2.25em;
+    padding: variables.$xl-padding;
     @include mixins.color-scheme(dark) {
         background-color: variables.$dark-color-card;
         border-color: variables.$dark-color-card-border;

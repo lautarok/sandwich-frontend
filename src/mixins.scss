@@ -7,20 +7,20 @@
 }
 
 @mixin container-x-padding {
-    padding-left: calc(50% - 50em);
-    padding-right: calc(50% - 50em);
+    padding-left: calc(50% - 35em);
+    padding-right: calc(50% - 35em);
 
-    @media screen and (max-width: 110em) {
+    @media screen and (max-width: 80em) {
         padding-left: 5em;
         padding-right: 5em;
     }
     
-    @media screen and (max-width: 70em) {
+    @media screen and (max-width: 50em) {
         padding-left: 2em;
         padding-right: 2em;
     }
     
-    @media screen and (max-width: 40em) {
+    @media screen and (max-width: 30em) {
         padding-left: 1em;
         padding-right: 1em;
     }
