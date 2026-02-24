@@ -3,7 +3,7 @@
 
 main {
     width: fit-content;
-    height: calc(100dvh - 6rem);
+    min-height: calc(100dvh - 6rem);
     padding-bottom: 6rem;
     display: grid;
     grid-template-columns: auto 1fr;
