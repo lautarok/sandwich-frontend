@@ -9,7 +9,7 @@
             <div class="ticket-head">
                 <div class="text">
                     <span>Sandwich.</span>
-                    <span>Ticket para: <span>Mayra centro</span></span>
+                    <span>Ticket para: <span>Lautaro</span></span>
                 </div>
                 <div class="date">
                     <span>{{date()?.toLocaleDateString()}}</span>
@@ -42,7 +42,7 @@
                 </tbody>
             </table>
             <div class="total">
-                <span>Total: <span>{{total?.toLocaleString("es-AR", {style: "currency", currency: "ARS"})}}</span></span>
+                <span>Total: <span>{{total?.toLocaleString("es-AR", {style: "currency", currency: "ARS"})?.replaceAll("&nbsp;", "")}}</span></span>
             </div>
         </article>
     </section>

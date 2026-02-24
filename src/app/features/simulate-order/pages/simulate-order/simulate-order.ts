@@ -47,6 +47,8 @@ export class SimulateOrder {
               this.result.set(data)
               this.date.set(new Date())
               this.hide.set(false)
+            } else {
+              this.hide.set(true)
             }
           })
       }, 100)
