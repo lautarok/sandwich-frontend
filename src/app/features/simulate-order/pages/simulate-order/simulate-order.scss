@@ -85,7 +85,7 @@ main {
 }
 
 .ticket > .ticket-head > .text > span:last-child > span {
-    padding: .2em;
+    padding: .2em .5em;
     margin-left: .2em;
     font-weight: 600;
     background-color: variables.$color-primary;
@@ -135,18 +135,18 @@ main {
     }
 }
 
-.ticket > .total {
+.ticket > .foot {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     font-size: 1em;
     font-weight: 600;
     font-family: monospace;
     margin-top: .5em;
 }
 
-.ticket > .total > span > span {
+.ticket > .foot > span > span {
     padding: variables.$sm-padding;
     background-color: variables.$color-primary;
     color: variables.$color-primary-foreground;

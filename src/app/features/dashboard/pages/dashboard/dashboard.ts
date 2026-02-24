@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Statistics } from "../../ui/statistics/statistics";
 import { Orders } from "../../ui/orders/orders";
-import { Button } from "../../../../shared/ui/button/button";
+import { AuthQr } from "../../ui/auth-qr/auth-qr";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Statistics, Orders, Button],
+  imports: [Statistics, Orders, AuthQr],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

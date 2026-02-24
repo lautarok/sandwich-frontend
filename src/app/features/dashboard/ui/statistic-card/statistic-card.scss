@@ -8,6 +8,9 @@ div {
     flex-direction: column;
     gap: .8em;
     line-height: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: variables.$color-card;
     border: solid 1px variables.$color-card-border;
     padding: variables.$xl-padding;

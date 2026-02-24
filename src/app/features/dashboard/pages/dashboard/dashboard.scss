@@ -12,16 +12,17 @@ main {
 
 section.welcome {
     width: 100%;
-    padding-top: 3.5em;
-    padding-bottom: 3.5em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     border: solid 1px;
     border-left: none;
     border-right: none;
     border-color: variables.$color-card-border;
     background-color: variables.$color-card;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
+    gap: 4em;
     @include mixins.container-x-padding;
     @include mixins.color-scheme(dark) {
         background-color: variables.$dark-color-card;
@@ -29,10 +30,27 @@ section.welcome {
     }
 }
 
-section.welcome > h1 > span {
+section.welcome > .text {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    line-height: 1;
+}
+
+section.welcome > .text > h1 > span {
     color: variables.$color-text-primary;
     @include mixins.color-scheme(dark) {
         color: variables.$dark-color-text-primary;
+    }
+}
+
+section.welcome > .separator {
+    width: 100%;
+    height: .3em;
+    background-color: variables.$color-background;
+    border-radius: 10em;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-background;
     }
 }
 

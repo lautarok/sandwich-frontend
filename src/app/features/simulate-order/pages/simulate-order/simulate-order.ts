@@ -1,7 +1,8 @@
-import { Component, effect, signal } from '@angular/core';
+import { afterNextRender, Component, effect, ElementRef, signal, viewChild } from '@angular/core';
 import { ApiCall } from '../../../../shared/adapters/api-call/api-call';
 import { ParseMessage } from './types/parse-message';
 import { OrderMessageBox } from '../../../../shared/ui/order-message-box/order-message-box';
+import JsBarcode from 'jsbarcode';
 
 @Component({
   selector: 'app-simulate-order',
@@ -14,17 +15,7 @@ export class SimulateOrder {
   result = signal<ParseMessage | undefined>(undefined)
   hide = signal<boolean>(false)
   date = signal<Date | undefined>(undefined)
-
-  get total() {
-    return this.result?.()?.semanticResult.items.reduce((acc, curr) => {
-      acc += (curr.quantity / 12) * (
-        curr.product === "miga" && curr.feature === "verduras" ? 13000
-          : curr.product === "miga" ? 11000
-          : 10000
-      )
-      return acc
-    }, 0)
-  }
+  barcode = viewChild.required<ElementRef<HTMLElement>>("barcode")
 
   constructor(
     private apiCall: ApiCall
@@ -53,5 +44,27 @@ export class SimulateOrder {
           })
       }, 100)
     })
+
+    afterNextRender(() => {
+      JsBarcode(this.barcode().nativeElement, "ORD-777", {
+        width: 1.5,
+        height: 40,
+        displayValue: false,
+        margin: 0,
+        background: "#00000000",
+        lineColor: "currentColor"
+      })
+    })
+  }
+
+  get total() {
+    return this.result?.()?.semanticResult.items.reduce((acc, curr) => {
+      acc += (curr.quantity / 12) * (
+        curr.product === "miga" && curr.feature === "verduras" ? 13000
+          : curr.product === "miga" ? 11000
+          : 10000
+      )
+      return acc
+    }, 0)
   }
 }

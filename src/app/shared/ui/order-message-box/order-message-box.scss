@@ -23,6 +23,7 @@ textarea {
     width: 100%;
     min-height: 5em;
     field-sizing: content;
+    max-height: 20em;
     padding: variables.$md-padding;
 }
 
