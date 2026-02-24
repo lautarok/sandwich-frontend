@@ -1,0 +1,56 @@
+@let semanticResult = result()?.semanticResult;
+@let items = semanticResult?.items;
+@let hasResult = !!items?.length;
+
+<main>
+    <section class="ticket-container" [class.show]="hasResult && !hide()">
+        <span>Ticket generado</span>
+        <article class="ticket">
+            <div class="ticket-head">
+                <div class="text">
+                    <span>Sandwich.</span>
+                    <span>Ticket para: <span>Mayra centro</span></span>
+                </div>
+                <div class="date">
+                    <span>{{date()?.toLocaleDateString()}}</span>
+                    <span>{{date()?.toLocaleTimeString()}}</span>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Características</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of items; track $index) {
+                        <tr>
+                            <td>x{{item.quantity}}</td>
+                            <td>{{item.product}}</td>
+                            <td>{{item.feature}}</td>
+                            <td>{{
+                                ((item.quantity/12) * (item.product === "miga" && item.feature === "vegetable" ? 13000 : item.product === "miga" ? 11000 : 10000)).toLocaleString("es-AR", {
+                                    style: "currency",
+                                    currency: "ARS"
+                                })
+                            }}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="total">
+                <span>Total: <span>{{total?.toLocaleString("es-AR", {style: "currency", currency: "ARS"})}}</span></span>
+            </div>
+        </article>
+    </section>
+    <section class="input-container">
+        <h1>Simula una orden</h1>
+        <app-order-message-box
+            (messageChange)="message.set($event.trim())"
+            [message]="message()"
+        />
+    </section>
+</main>

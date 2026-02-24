@@ -1,0 +1,22 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+textarea {
+    resize: none;
+    width: 30em;
+    overflow: hidden;
+    height: fit-content;
+    min-height: 10em;
+    max-height: 30em;
+    border-width: 1px;
+    display: block;
+    border-style: solid;
+    padding: variables.$xl-padding;
+    border-color: variables.$color-card-border;
+    border-radius: variables.$xl-radius;
+    background-color: variables.$color-card;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-card;
+        border-color: variables.$dark-color-card-border;
+    }
+}

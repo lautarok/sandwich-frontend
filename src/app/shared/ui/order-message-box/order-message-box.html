@@ -1,0 +1,5 @@
+<textarea
+    autofocus
+    (input)="messageChange.emit($any($event.target).value)"
+    placeholder="Indica tu pedido aquí..."
+>{{message()}}</textarea>

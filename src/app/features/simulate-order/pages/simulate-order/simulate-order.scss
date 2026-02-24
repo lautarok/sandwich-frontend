@@ -1,0 +1,162 @@
+@use "../../../../../variables.scss";
+@use "../../../../../mixins.scss";
+
+main {
+    width: fit-content;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.ticket-container {
+    max-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    pointer-events: none;
+    opacity: 0;
+    transition: max-width ease-in-out .5s,
+        opacity ease-in-out .5s;
+    &.show {
+        pointer-events: all;
+        max-width: 30em;
+        opacity: 1;
+    }
+}
+
+.ticket-container > span:first-child {
+    font-size: 2em;
+    font-weight: 800;
+    white-space: nowrap;
+    padding-right: 2.5rem;
+}
+
+.ticket  {
+    width: fit-content;
+    padding: variables.$xl-padding;
+    background-color: variables.$color-card;
+    border: solid 1px variables.$color-card-border;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border-radius: variables.$xl-radius;
+    margin-right: 2.5rem;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-card;
+        border-color: variables.$dark-color-card-border;
+    }
+}
+
+.ticket > .ticket-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1em;
+    align-items: center;
+}
+
+.ticket > .ticket-head > .text {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: .75em;
+    line-height: 1;
+}
+
+.ticket > .ticket-head > .text > span:first-child {
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+.ticket > .ticket-head > .text > span:last-child {
+    font-size: .8em;
+}
+
+.ticket > .ticket-head > .text > span:last-child > span {
+    padding: .2em;
+    border-radius: .3em;
+    margin-left: .2em;
+    font-weight: 600;
+    background-color: variables.$color-primary;
+    color: variables.$color-primary-foreground;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-primary;
+        color: variables.$dark-color-primary-foreground;
+    }
+}
+
+.ticket > .ticket-head > .date {
+    font-size: .8rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.ticket > table {
+    border-spacing: 0;
+    width: fit-content;
+    font-family: monospace;
+    & th, & td {
+        padding: .7em;
+        border-bottom: solid 1px;
+        border-color: variables.$color-card-border;
+        @include mixins.color-scheme(dark) {
+            border-color: variables.$dark-color-card-border;
+        }
+    }
+    & th:last-child, & td:last-child {
+        text-align: right;
+    }
+    & tbody > tr {
+        & > td:first-child,
+        & > td:nth-child(2) {
+            border-right: solid 1px;
+            border-color: variables.$color-card-border;
+            @include mixins.color-scheme(dark) {
+                border-color: variables.$dark-color-card-border;
+            }
+        }
+    }
+    & td::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.ticket > .total {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.ticket > .total > span > span {
+    border-radius: .3em;
+    padding: variables.$sm-padding;
+    background-color: variables.$color-primary;
+    color: variables.$color-primary-foreground;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-primary;
+        color: variables.$dark-color-primary-foreground;
+    }
+}
+
+.input-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}

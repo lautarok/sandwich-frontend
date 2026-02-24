@@ -1,0 +1,7 @@
+@use "./variables.scss";
+
+@mixin color-scheme($value: light) {
+    @media (prefers-color-scheme: $value) {
+        @content;
+    }
+}
