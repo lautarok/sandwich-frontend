@@ -7,5 +7,6 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './button.scss',
 })
 export class Button {
-  clickChange = output()
+  onClick = output()
+  disabled = input<boolean>(false)
 }

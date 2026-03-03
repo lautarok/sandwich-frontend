@@ -1,0 +1,15 @@
+<main>
+    <section class="head">
+        <h1>Listado de clientes</h1>
+        <app-link href="/orders/create">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Plus"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>
+            <span>Registrar nuevo cliente</span>
+        </app-link>
+    </section>
+    <app-list
+        [thead]="['#', 'Nombre', 'Apellido', 'Creado']"
+        [tbody]="mappedCustomers"
+        [page]="1"
+        [totalPages]="10"
+    />
+</main>

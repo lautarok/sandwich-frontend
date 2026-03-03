@@ -1,0 +1,15 @@
+@use "../../../../../mixins.scss";
+
+section {
+    width: 100%;
+    height: fit-content;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    @include mixins.container-x-padding;
+}
+
+.table-container {
+    width: 100%;
+    height: fit-content;
+    margin: 2em 0;
+}

@@ -55,6 +55,7 @@ section.welcome > .separator {
 }
 
 .grid-layout {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 5em;

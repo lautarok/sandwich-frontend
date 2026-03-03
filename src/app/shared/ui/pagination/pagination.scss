@@ -1,0 +1,41 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+div {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div > nav {
+    width: fit-content;
+    height: fit-content;
+}
+
+div > nav > ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+div > nav > ul > li {
+    list-style: none;
+}
+
+div > nav > ul > li > button {
+    width: 2.75em;
+    height: 2.75em;
+    border-color: variables.$color-card-border;
+    background-color: variables.$color-card;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    @include mixins.color-scheme(dark) {
+        border-color: variables.$dark-color-card-border;
+        background-color: variables.$dark-color-card;
+    }
+}

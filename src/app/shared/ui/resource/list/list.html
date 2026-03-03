@@ -1,0 +1,12 @@
+<section>
+    @if (tbody().length > 7) {
+        <app-pagination />
+    }
+    <div class="table-container">
+        <app-table
+            [thead]="thead()"
+            [tbody]="tbody()"
+        />
+    </div>
+    <app-pagination />
+</section>

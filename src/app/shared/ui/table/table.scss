@@ -1,0 +1,45 @@
+@use "../../../../variables.scss";
+@use "../../../../mixins.scss";
+
+table {
+    border-spacing: 0 .75em;
+    width: 100%;
+    text-align: left;
+}
+
+table > thead > tr > th,
+table > tbody > tr > td {
+    padding: 1em 1.5em;
+    &:first-child {
+        width: 1%;
+        text-align: center;
+    }
+}
+
+table > thead > tr > th {
+    padding-top: 0;
+}
+
+table > tbody > tr > td {
+    border-width: 1px;
+    border-right-width: 0;
+    border-style: solid;
+    border-color: variables.$color-card-border;
+    @include mixins.color-scheme(dark) {
+        border-color: variables.$dark-color-card-border;
+    }
+    &:last-child {
+        border-right-width: 1px;
+    }
+}
+
+table > tbody > tr:last-child > td {
+    border-bottom-width: 1px;
+}
+
+table > tbody > tr > td {
+    background-color: variables.$color-card;
+    @include mixins.color-scheme(dark) {
+        background-color: variables.$dark-color-card;
+    }
+}

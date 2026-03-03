@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            @for (th of thead(); track $index) {
+                <th>{{th}}</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (row of tbody(); track $index) {
+            <tr>
+                @for (td of row; track $index) {
+                    <td>{{td}}</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

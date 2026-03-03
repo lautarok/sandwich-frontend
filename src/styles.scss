@@ -31,6 +31,12 @@ body {
     }
 }
 
+main {
+    min-height: calc(100dvh - 6rem);
+    display: flex;
+    flex-direction: column;
+}
+
 input, textarea, button, a {
     color: inherit;
     font-size: inherit;
@@ -38,7 +44,12 @@ input, textarea, button, a {
     font-family: inherit;
 }
 
-svg path {
-    stroke: currentColor !important;
-    fill: currentColor !important;
+button, a {
+    user-select: none;
+    cursor: pointer;
+}
+
+.qr svg path {
+    stroke: currentColor;
+    fill: currentColor;
 }

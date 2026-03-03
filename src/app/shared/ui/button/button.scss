@@ -1,11 +1,19 @@
 @use "../../../../variables.scss";
 @use "../../../../mixins.scss";
 
-button {
+.button {
     width: fit-content;
     height: fit-content;
-    padding: .5rem .8rem;
+    padding: .5em .8em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
     background-color: variables.$color-primary;
     color: variables.$color-primary-foreground;
     font-weight: 600;
+}
+
+.button:disabled {
+    opacity: .5;
+    pointer-events: none;
 }

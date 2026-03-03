@@ -1,0 +1,61 @@
+@use "../../../../../variables.scss";
+@use "../../../../../mixins.scss";
+
+main {
+    width: fit-content;
+    min-height: calc(100dvh - 6rem);
+    padding-bottom: 6rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.ticket-container {
+    max-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2em;
+    pointer-events: none;
+    opacity: 0;
+    padding-right: 2em;
+    font-size: .8rem;
+    transition: max-width ease-in-out .3s .3s,
+        opacity ease-in-out .3s;
+    &.show {
+        pointer-events: all;
+        max-width: 100rem;
+        opacity: 1;
+        transition: max-width ease-in-out .3s,
+            opacity ease-in-out .3s .3s;
+    }
+    &.show + .input-container > h1 {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.ticket-container > span:first-child {
+    font-size: 2em;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.input-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container > h1 {
+    opacity: 1;
+    transition: opacity ease-in-out .3s;
+}

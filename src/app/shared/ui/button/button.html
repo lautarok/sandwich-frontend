@@ -1,3 +1,7 @@
-<button (click)="clickChange.emit()">
+<button
+    class="button"
+    [disabled]="disabled()"
+    (click)="!disabled() ? onClick.emit() : undefined"
+>
     <ng-content />
 </button>
