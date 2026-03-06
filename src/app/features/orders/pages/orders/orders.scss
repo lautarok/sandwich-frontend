@@ -1,6 +1,12 @@
 @use "../../../../../variables.scss";
 @use "../../../../../mixins.scss";
 
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto 1fr;
+}
+
 section.head {
     width: 100%;
     height: fit-content;
@@ -18,4 +24,16 @@ section.head {
         border-color: variables.$dark-color-card-border;
         background-color: variables.$dark-color-card;
     }
+}
+
+.grid-layout {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 18em 1fr;
+    gap: 2em;
+    min-height: 100%;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    @include mixins.container-x-padding;
 }

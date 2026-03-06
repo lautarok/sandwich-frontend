@@ -9,22 +9,22 @@ div {
     justify-content: space-between;
 }
 
-div > nav {
+div nav {
     width: fit-content;
     height: fit-content;
 }
 
-div > nav > ul {
+div nav > ul {
     display: flex;
     align-items: center;
     gap: 1em;
 }
 
-div > nav > ul > li {
+div nav > ul > li {
     list-style: none;
 }
 
-div > nav > ul > li > button {
+div nav > ul > li > button {
     width: 2.75em;
     height: 2.75em;
     border-color: variables.$color-card-border;
@@ -38,4 +38,26 @@ div > nav > ul > li > button {
         border-color: variables.$dark-color-card-border;
         background-color: variables.$dark-color-card;
     }
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+div nav > ul > li:nth-child(4) > button {
+    border-width: 2px;
+    border-color: variables.$color-primary;
+    color: variables.$color-primary;
+    @include mixins.color-scheme(dark) {
+        border-color: variables.$dark-color-primary;
+        color: variables.$dark-color-primary;
+    }
+}
+
+div > div {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 2em;
 }

@@ -1,3 +1,7 @@
-<app-header />
-<router-outlet (activate)="handleRouterActivate()" />
-<app-footer />
+<div class="layout">
+    <app-header />
+    <div class="content">
+        <router-outlet (activate)="handleRouterActivate()" />
+    </div>
+    <app-footer />
+</div>

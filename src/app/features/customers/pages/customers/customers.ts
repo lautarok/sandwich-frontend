@@ -11,7 +11,8 @@ import { ApiCall } from '../../../../shared/services/api-call/api-call';
   styleUrl: './customers.scss',
 })
 export class Customers {
-  customers = signal<Customer[]>([])
+  customers = signal<Customer[] | null>(null)
+  totalPages = signal<number>(0)
 
   constructor(
     private readonly apiCall: ApiCall
@@ -21,15 +22,16 @@ export class Customers {
       list: Customer[]
     }>("customer").subscribe(data => {
       this.customers.set(data.list)
+      this.totalPages.set(Math.ceil(data.count / 10))
     })
   }
 
   get mappedCustomers() {
-    return this.customers().map(customer => [
+    return this.customers()?.map(customer => [
       customer.id.toString(),
       customer.name,
       customer.surname || "",
       customer.createdAt
-    ])
+    ]) || []
   }
 }

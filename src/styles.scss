@@ -9,6 +9,7 @@
     outline: none;
     -webkit-tap-highlight-color: transparent !important;
     background: transparent;
+    user-select: inherit;
 }
 
 html {
@@ -16,6 +17,7 @@ html {
     height: 100%;
     overflow: auto;
     font-size: 16px;
+    user-select: none;
 }
 
 body {
@@ -34,7 +36,10 @@ body {
 main {
     min-height: calc(100dvh - 6rem);
     display: flex;
-    flex-direction: column;
+}
+
+app-list {
+    height: 100%;
 }
 
 input, textarea, button, a {
@@ -45,11 +50,14 @@ input, textarea, button, a {
 }
 
 button, a {
-    user-select: none;
     cursor: pointer;
 }
 
 .qr svg path {
     stroke: currentColor;
     fill: currentColor;
+}
+
+table, input, textarea {
+    user-select: text;
 }

@@ -22,15 +22,18 @@ main {
     gap: 2em;
     pointer-events: none;
     opacity: 0;
-    padding-right: 2em;
     font-size: .8rem;
+    padding-right: 0;
     transition: max-width ease-in-out .3s .3s,
+        padding-right ease-in-out .3s .3s,
         opacity ease-in-out .3s;
     &.show {
         pointer-events: all;
         max-width: 100rem;
         opacity: 1;
+        padding-right: 4em;
         transition: max-width ease-in-out .3s,
+            padding-right ease-in-out .3s,
             opacity ease-in-out .3s .3s;
     }
     &.show + .input-container > h1 {

@@ -10,4 +10,8 @@ import { Barcode } from '../barcode/barcode';
 })
 export class Ticket {
   order = input.required<Order>()
+
+  get createdAt() {
+    return new Date(this.order().createdAt)
+  }
 }

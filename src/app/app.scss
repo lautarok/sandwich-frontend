@@ -1,0 +1,13 @@
+.layout {
+    width: 100%;
+    height: fit-content;
+    min-height: calc(100dvh + 6rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.content {
+    width: 100%;
+    height: fit-content;
+}

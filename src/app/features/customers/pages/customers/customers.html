@@ -9,7 +9,7 @@
     <app-list
         [thead]="['#', 'Nombre', 'Apellido', 'Creado']"
         [tbody]="mappedCustomers"
-        [page]="1"
-        [totalPages]="10"
+        [totalPages]="totalPages()"
+        [isLoading]="customers() === null"
     />
 </main>

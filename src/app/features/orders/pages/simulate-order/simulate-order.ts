@@ -44,7 +44,7 @@ export class SimulateOrder {
 							this.hide.set(true)
 						}
 					})
-			}, 100)
+			}, 500)
 		})
 	}
 
@@ -61,7 +61,7 @@ export class SimulateOrder {
 			features: item.feature,
 			quantity: item.quantity,
 			price: item.price / 100,
-			updatedAt: this.date()
+			updatedAt: this.date().toString()
 		})) ?? []
 	}
 

@@ -1,12 +1,18 @@
-<section>
-    @if (tbody().length > 7) {
-        <app-pagination />
-    }
-    <div class="table-container">
-        <app-table
-            [thead]="thead()"
-            [tbody]="tbody()"
+@if (!isLoading()) {
+    <section>
+        <app-pagination
+            [totalPages]="totalPages()"
         />
+        <div class="table-container">
+            <app-table
+                [thead]="thead()"
+                [tbody]="tbody()"
+                [withLinks]="true"
+            />
+        </div>
+    </section>
+} @else {
+    <div class="loader-container">
+        <app-loader />
     </div>
-    <app-pagination />
-</section>
+}

@@ -10,7 +10,15 @@
         @for (row of tbody(); track $index) {
             <tr>
                 @for (td of row; track $index) {
-                    <td>{{td}}</td>
+                    <td>
+                        @if (withLinks()) {
+                            <a [routerLink]="`./${row[0]}`">
+                                {{td}}
+                            </a>
+                        } @else {
+                            {{td}}
+                        }
+                    </td>
                 }
             </tr>
         }

@@ -6,10 +6,13 @@
             <span>Simular una órden</span>
         </app-link>
     </section>
-    <app-list
-        [thead]="['#', 'Total', 'Cliente', 'Fecha']"
-        [tbody]="mappedOrders"
-        [page]="1"
-        [totalPages]="10"
-    />
+    <div class="grid-layout">
+        <app-filters />
+        <app-list
+            [thead]="['#', 'Total', 'Cliente', 'Fecha']"
+            [tbody]="mappedOrders"
+            [totalPages]="totalPages()"
+            [isLoading]="orders() === null"
+        />
+    </div>
 </main> 

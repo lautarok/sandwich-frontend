@@ -1,45 +1,41 @@
 <div>
     <nav>
         <ul>
-            <li>
-                <button>
-                    1
-                </button>
-            </li>
-            <li>
-                <button>
-                    2
-                </button>
-            </li>
-            <li>
-                <button>
-                    ...
-                </button>
-            </li>
-            <li>
-                <button>
-                    10
-                </button>
-            </li>
-            <li>
-                <button>
-                    12
-                </button>
-            </li>
+            @for (index of [0, 1, 2, 3, 4, 5, 6]; track $index) {
+                @let currentPage = getPage(index);
+                @if (currentPage) {
+                    <li>
+                        <button (click)="setPage(currentPage)">{{currentPage}}</button>
+                    </li>
+                } @else {
+                    <li>
+                        <button disabled></button>
+                    </li>
+                }
+            }
         </ul>
     </nav>
-    <nav>
-        <ul>
-            <li>
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ChevronLeft"><path d="M15 4l-8 8 8 8"/></svg>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ChevronRight"><path d="M8 4l8 8-8 8"/></svg>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <div>
+        <p>Página: <strong>{{page()}} / {{totalPages()}}</strong></p>
+        <nav>
+            <ul>
+                <li>
+                    <button
+                        [disabled]="page() === 1"
+                        (click)="handlePrev()"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ChevronLeft"><path d="M15 4l-8 8 8 8"/></svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        [disabled]="page() === totalPages()"
+                        (click)="handleNext()"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ai ai-ChevronRight"><path d="M8 4l8 8-8 8"/></svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
